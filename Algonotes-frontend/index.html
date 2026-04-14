@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlgoNotes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="sidebar">
+        <div class="sidebar-header">AlgoNotes</div>
+        <input class="search-bar" type="text" placeholder="Search notes..." />
+        <button class="add-note-btn">+New note</button>
+
+        <div class="note-list">
+          <div class="note-card">Binary Search</div>
+          <div class="note-card">Bubble Sort</div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="main-header">
+          <div class="note-title">Binary Search</div>
+
+          <input
+            class="note-option"
+            list="Languages"
+            placeholder="JavaScript"
+          />
+          <datalist id="Languages">
+            <option value="Python"></option>
+            <option value="Java"></option>
+            <option value="C++"></option>
+          </datalist>
+          <button class="delete-btn">Delete</button>
+        </div>
+        <div class="main-content">
+          <div class="steps-container"></div>
+
+          <div class="input-field">
+            <textarea
+              class="code-snippet"
+              id="code-snippet"
+              placeholder="Describe the next step..."
+            ></textarea>
+            <button class="add-step-btn">Add Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -14,26 +14,31 @@
         <button class="add-note-btn">+New note</button>
 
         <div class="note-list">
-          <div class="note-card">Binary Search</div>
-          <div class="note-card">Bubble Sort</div>
+          <div class="note-card"></div>
         </div>
       </div>
 
-      <div class="main">
+      <div class="main-panel">
         <div class="main-header">
-          <div class="note-title">Binary Search</div>
+          <input type="text" class="note-title" placeholder="Note title.." />
 
+          <select class="select-language">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="TypeScript">TypeScript</option>
+          </select>
+          <input type="text" class="time-complexity" placeholder="Time: O( )" />
           <input
-            class="note-option"
-            list="Languages"
-            placeholder="JavaScript"
+            type="text"
+            class="space-complexity"
+            placeholder="Space: O( )"
           />
-          <datalist id="Languages">
-            <option value="Python"></option>
-            <option value="Java"></option>
-            <option value="C++"></option>
-          </datalist>
+
           <button class="delete-btn">Delete</button>
+          <span class="saved-indicator">Saved ✓</span>
         </div>
         <div class="main-content">
           <div class="steps-container"></div>
@@ -42,7 +47,7 @@
             <textarea
               class="code-snippet"
               id="code-snippet"
-              placeholder="Describe the next step..."
+              placeholder="Describe the next step... (Shift + Enter for new line)"
             ></textarea>
             <button class="add-step-btn">Add Step</button>
           </div>

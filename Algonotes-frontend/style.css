@@ -146,6 +146,12 @@ body {
     border:1px white solid;
     margin: 0 1rem;
 }
+.saved-indicator {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    font-size: 0.8rem;
+    color: white;
+}
 
 
 .delete-btn:hover {

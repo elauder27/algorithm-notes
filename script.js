@@ -1,7 +1,7 @@
 //note for me: e.stop propagation always prevents the enitre block from triggering due to a click.
 let notesArr = [
-  { id: 1, title: "Binary Search", language: "JavaScript", steps: [] },
-  { id: 2, title: "Bubble Sort", language: "python", steps: [] },
+  { id: 1, title: "Add Note", language: "JavaScript", steps: [] },
+  { id: 2, title: "Another Note", language: "python", steps: [] },
 ];
 
 const storedNotes = localStorage.getItem("notes");
@@ -21,6 +21,31 @@ const stepTextarea = document.querySelector(".code-snippet");
 const addStepBtn = document.querySelector(".add-step-btn");
 const selectLanguage = document.querySelector(".select-language");
 const mainPanel = document.querySelector(".main-panel");
+
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("sidebarOverlay");
+
+//my hamburger func
+function openSidebar() {
+  sidebar.classList.add("open");
+  overlay.classList.add("active");
+  hamburgerBtn.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeSidebar() {
+  sidebar.classList.remove("open");
+  overlay.classList.remove("active");
+  hamburgerBtn.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+hamburgerBtn.addEventListener("click", () => {
+  sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+});
+
+overlay.addEventListener("click", closeSidebar);
 
 const deleteBtn = document.querySelector(".delete-btn");
 deleteBtn.addEventListener("click", () => {

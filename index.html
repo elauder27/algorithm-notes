@@ -8,7 +8,8 @@
   </head>
   <body>
     <div class="app">
-      <div class="sidebar">
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-header">AlgoNotes</div>
         <input class="search-bar" type="text" placeholder="Search notes..." />
         <button class="add-note-btn">+New note</button>
@@ -20,6 +21,16 @@
 
       <div class="main-panel">
         <div class="main-header">
+          <!-- hamburger for smaller screens(to show rather)-->
+          <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Open menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <input type="text" class="note-title" placeholder="Note title.." />
 
           <select class="select-language">

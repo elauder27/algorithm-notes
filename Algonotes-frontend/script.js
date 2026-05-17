@@ -3,6 +3,7 @@ let notesArr = [
   { id: 1, title: "Binary Search", language: "JavaScript", steps: [] },
   { id: 2, title: "Bubble Sort", language: "python", steps: [] },
 ];
+
 const storedNotes = localStorage.getItem("notes");
 if (storedNotes) {
   notesArr = JSON.parse(storedNotes);
@@ -20,8 +21,6 @@ const stepTextarea = document.querySelector(".code-snippet");
 const addStepBtn = document.querySelector(".add-step-btn");
 const selectLanguage = document.querySelector(".select-language");
 const mainPanel = document.querySelector(".main-panel");
-const timeComplexity = document.querySelector(".time-complexity");
-const spaceComplexity = document.querySelector(".space-complexity");
 
 const deleteBtn = document.querySelector(".delete-btn");
 deleteBtn.addEventListener("click", () => {
@@ -129,8 +128,6 @@ function renderMainPanel() {
     noteTitle.value = "";
     noteTitle.disabled = true;
     selectLanguage.disabled = true;
-    timeComplexity.value = "";
-    spaceComplexity.value = "";
     selectLanguage.value = "JavaScript";
     document.querySelector(".steps-container").innerHTML =
       "<p class='empty-msg'>No note selected. Please create or select a note.</p>";
@@ -138,13 +135,8 @@ function renderMainPanel() {
   }
   noteTitle.disabled = false;
   selectLanguage.disabled = false;
-  timeComplexity.disabled = false;
-  spaceComplexity.disabled = false;
   noteTitle.value = note.title;
   selectLanguage.value = note.language;
-
-  timeComplexity.value = note.timeComplexity || "";
-  spaceComplexity.value = note.spaceComplexity || "";
   renderSteps();
 }
 
@@ -242,8 +234,6 @@ function createNote() {
     id: Date.now(),
     title: "New Note",
     language: "JavaScript",
-    timeComplexity: "",
-    spaceComplexity: "",
     steps: [],
   };
 
@@ -257,22 +247,6 @@ function createNote() {
 }
 
 addNoteBtn.addEventListener("click", createNote);
-
-timeComplexity.addEventListener("input", () => {
-  const note = notesArr.find((n) => n.id === currentNoteId);
-  if (!note) return;
-  note.timeComplexity = timeComplexity.value;
-  localStorage.setItem("notes", JSON.stringify(notesArr));
-  showSavedIndicator();
-});
-
-spaceComplexity.addEventListener("input", () => {
-  const note = notesArr.find((n) => n.id === currentNoteId);
-  if (!note) return;
-  note.spaceComplexity = spaceComplexity.value;
-  localStorage.setItem("notes", JSON.stringify(notesArr));
-  showSavedIndicator();
-});
 
 renderNotesList();
 renderMainPanel();

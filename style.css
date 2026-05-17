@@ -282,6 +282,7 @@ body {
   color: rgba(255, 255, 255, 0.32);
   white-space: nowrap;
   transition: opacity 0.3s ease;
+  opacity: 0;
 }
 
 

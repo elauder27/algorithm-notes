@@ -133,12 +133,14 @@ function renderNotesList() {
       renderNotesList();
       renderMainPanel();
       noteTitle.focus();
+      closeSidebar();
     });
 
     noteCard.addEventListener("click", () => {
       currentNoteId = note.id;
       renderNotesList();
       renderMainPanel();
+      closeSidebar();
     });
     noteList.appendChild(noteCard);
   });

@@ -469,7 +469,7 @@ body {
   }
  
 
-  .sideBar {
+  .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -484,7 +484,7 @@ body {
     transform: translateX(0);
   }
  
-  .sidebar-overlay {
+  .sidebarOverlay {
     display: block; 
   }
  

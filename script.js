@@ -23,7 +23,7 @@ const selectLanguage = document.querySelector(".select-language");
 const mainPanel = document.querySelector(".main-panel");
 
 const hamburgerBtn = document.getElementById("hamburgerBtn");
-const sidebar = document.getElementById("sideBar");
+const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("sidebarOverlay");
 
 //my hamburger func
